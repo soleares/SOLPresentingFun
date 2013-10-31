@@ -1,5 +1,5 @@
 //
-//  SOLModalTransitionAnimator.h
+//  SOLOptionsTransitionAnimator.h
 //  PresentingFun
 //
 //  Created by Jesse Wolff on 10/31/13.
@@ -9,6 +9,6 @@
 @import Foundation;
 #import "SOLBaseTransitionAnimator.h"
 
-@interface SOLModalTransitionAnimator : SOLBaseTransitionAnimator
+@interface SOLOptionsTransitionAnimator : SOLBaseTransitionAnimator
 
 @end

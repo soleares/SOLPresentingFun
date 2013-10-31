@@ -1,14 +1,14 @@
 //
-//  SOLModalTransitionAnimator.m
+//  SOLOptionsTransitionAnimator.m
 //  PresentingFun
 //
 //  Created by Jesse Wolff on 10/31/13.
 //  Copyright (c) 2013 Soleares, Inc. All rights reserved.
 //
 
-#import "SOLModalTransitionAnimator.h"
+#import "SOLOptionsTransitionAnimator.h"
 
-@implementation SOLModalTransitionAnimator
+@implementation SOLOptionsTransitionAnimator
 
 #pragma mark - UIViewControllerAnimatedTransitioning
 

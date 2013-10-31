@@ -12,7 +12,7 @@
 		88190A1D1818A3BA00E3ABB3 /* SOLOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88190A1C1818A3BA00E3ABB3 /* SOLOptions.m */; };
 		882B4DDA1803432D0080F7F0 /* SOLFoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4DD91803432D0080F7F0 /* SOLFoldViewController.m */; };
 		882B4DDD180343700080F7F0 /* SOLFoldTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4DDC180343700080F7F0 /* SOLFoldTransitionAnimator.m */; };
-		8834EE1917FE0780005E6F64 /* SOLModalTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8834EE1817FE0780005E6F64 /* SOLModalTransitionAnimator.m */; };
+		8834EE1917FE0780005E6F64 /* SOLOptionsTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8834EE1817FE0780005E6F64 /* SOLOptionsTransitionAnimator.m */; };
 		8834EE1D17FE0FB5005E6F64 /* SOLSlideTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8834EE1C17FE0FB5005E6F64 /* SOLSlideTransitionAnimator.m */; };
 		8834EE2017FE17C2005E6F64 /* SOLSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8834EE1F17FE17C2005E6F64 /* SOLSlideViewController.m */; };
 		8850981A181F0DD8003070F2 /* SOLFromEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88509819181F0DD8003070F2 /* SOLFromEdgeViewController.m */; };
@@ -44,8 +44,8 @@
 		882B4DD91803432D0080F7F0 /* SOLFoldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOLFoldViewController.m; sourceTree = "<group>"; };
 		882B4DDB180343700080F7F0 /* SOLFoldTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOLFoldTransitionAnimator.h; sourceTree = "<group>"; };
 		882B4DDC180343700080F7F0 /* SOLFoldTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOLFoldTransitionAnimator.m; sourceTree = "<group>"; };
-		8834EE1717FE0780005E6F64 /* SOLModalTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOLModalTransitionAnimator.h; sourceTree = "<group>"; };
-		8834EE1817FE0780005E6F64 /* SOLModalTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOLModalTransitionAnimator.m; sourceTree = "<group>"; };
+		882D4E4618231107003C7B43 /* SOLOptionsTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOLOptionsTransitionAnimator.h; sourceTree = "<group>"; };
+		8834EE1817FE0780005E6F64 /* SOLOptionsTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOLOptionsTransitionAnimator.m; sourceTree = "<group>"; };
 		8834EE1B17FE0FB5005E6F64 /* SOLSlideTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOLSlideTransitionAnimator.h; sourceTree = "<group>"; };
 		8834EE1C17FE0FB5005E6F64 /* SOLSlideTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOLSlideTransitionAnimator.m; sourceTree = "<group>"; };
 		8834EE1E17FE17C2005E6F64 /* SOLSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOLSlideViewController.h; sourceTree = "<group>"; };
@@ -99,8 +99,6 @@
 			children = (
 				88C9A74C1815E6CD00B01D2C /* SOLBaseTransitionAnimator.h */,
 				88C9A74D1815E6CD00B01D2C /* SOLBaseTransitionAnimator.m */,
-				8834EE1717FE0780005E6F64 /* SOLModalTransitionAnimator.h */,
-				8834EE1817FE0780005E6F64 /* SOLModalTransitionAnimator.m */,
 				8834EE1B17FE0FB5005E6F64 /* SOLSlideTransitionAnimator.h */,
 				8834EE1C17FE0FB5005E6F64 /* SOLSlideTransitionAnimator.m */,
 				881257AD17FF46D900B0025E /* SOLBounceTransitionAnimator.h */,
@@ -109,6 +107,8 @@
 				882B4DDC180343700080F7F0 /* SOLFoldTransitionAnimator.m */,
 				88E624461811A84000B13CAA /* SOLDropTransitionAnimator.h */,
 				88E624471811A84000B13CAA /* SOLDropTransitionAnimator.m */,
+				882D4E4618231107003C7B43 /* SOLOptionsTransitionAnimator.h */,
+				8834EE1817FE0780005E6F64 /* SOLOptionsTransitionAnimator.m */,
 			);
 			name = Animators;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 				88F9876417ECF85500BEF90C /* main.m in Sources */,
 				88E624451811A2B000B13CAA /* SOLDropViewController.m in Sources */,
 				88E624481811A84000B13CAA /* SOLDropTransitionAnimator.m in Sources */,
-				8834EE1917FE0780005E6F64 /* SOLModalTransitionAnimator.m in Sources */,
+				8834EE1917FE0780005E6F64 /* SOLOptionsTransitionAnimator.m in Sources */,
 				8834EE1D17FE0FB5005E6F64 /* SOLSlideTransitionAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

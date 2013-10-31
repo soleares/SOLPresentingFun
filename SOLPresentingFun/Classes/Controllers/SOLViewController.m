@@ -13,8 +13,8 @@
 #import "SOLDropViewController.h"
 #import "SOLFoldTransitionAnimator.h"
 #import "SOLFoldViewController.h"
-#import "SOLModalTransitionAnimator.h"
 #import "SOLOptions.h"
+#import "SOLOptionsTransitionAnimator.h"
 #import "SOLOptionsViewController.h"
 #import "SOLSlideTransitionAnimator.h"
 #import "SOLSlideViewController.h"
@@ -175,7 +175,7 @@ static NSString * const kSegueSlidePush      = @"slidePush";
         // UICollectionView useLayoutToLayoutNavigationTransitions doesn't work
         // properly with segues. It works fine if you push the collection view manually.
         // The navigation controller delegate needs to be set to nil so that the
-        // default interactive pop transition (swipe left) works.
+        // default interactive pop transition (swipe right) works.
         case TableViewSectionCollectionView: {
             self.navigationController.delegate = nil;
             UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -212,7 +212,7 @@ static NSString * const kSegueSlidePush      = @"slidePush";
     // Options
     if ([presented isKindOfClass:[UINavigationController class]] &&
         [((UINavigationController *)presented).topViewController isKindOfClass:[SOLOptionsViewController class]]) {
-        SOLModalTransitionAnimator *animator = [[SOLModalTransitionAnimator alloc] init];
+        SOLOptionsTransitionAnimator *animator = [[SOLOptionsTransitionAnimator alloc] init];
         animator.appearing = YES;
         animator.duration = 0.35;
         animationController = animator;
@@ -265,7 +265,7 @@ static NSString * const kSegueSlidePush      = @"slidePush";
     // Options
     if ([dismissed isKindOfClass:[UINavigationController class]] &&
         [((UINavigationController *)dismissed).topViewController isKindOfClass:[SOLOptionsViewController class]]) {
-        SOLModalTransitionAnimator *animator = [[SOLModalTransitionAnimator alloc] init];
+        SOLOptionsTransitionAnimator *animator = [[SOLOptionsTransitionAnimator alloc] init];
         animator.appearing = NO;
         animator.duration = 0.35;
         animationController = animator;
