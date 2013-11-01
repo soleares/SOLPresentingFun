@@ -3,7 +3,7 @@ SOLPresentingFun
 
 SOLPresentingFun is sample code for WWDC Session 218: Custom Transitions Using View Controllers.
 
-Apple didn't provide sample code for this session so it's recreated here for your perusal and enjoyment. It requires Xcode 5 and iOS 7.
+Apple didn't provide sample code for this session so it's recreated here for your perusal and enjoyment.
 
 Storyboards are used as much as possible in this sample. This was done as an exercise and to verify that the new APIs worked with Storyboard segues.
 
@@ -56,4 +56,4 @@ I came across the following issues with the new API:
 3. Normally an unwind segue will pop/dismiss the view controller. This doesn't happen 
  for custom modal transitions so the view controller needs to be programmatically dismissed in the unwind segue action method. See the comments for `-[SOLViewController unwindToViewController:]` for more details.
  
-4. For standard interactive transitions like Flow 1, the navigation controller delegate can't be set otherwise the standard interactive pop gesture (swipe right) breaks. See the comments in `-[SOLViewController prepareForSegue:]` for more details.
+4. For standard interactive transitions like Flow 1, the navigation controller delegate can't be set otherwise the standard interactive pop gesture (swipe right) breaks. See the comments for `-[SOLViewController prepareForSegue:]` for more details.
