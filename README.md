@@ -49,11 +49,11 @@ The transition is implemented in `SOLOptionsTransitionAnimator`.
 
 I came across the following issues with the new API:
 
-1. `UICollectionViewController.useLayoutToLayoutNavigationTransitions` don't work properly with storyboard segues. This is why I push the collection view controller programmatically instead of with a segue. The issue is that it doesn't transition to the third collection view when using segues. I believe this is due to an SDK bug.
+1. `UICollectionViewController.useLayoutToLayoutNavigationTransitions` doesn't work properly with storyboard segues. This is why I push the collection view controller programmatically instead of with a segue. It doesn't transition to the third collection view when using segues. I believe this is due to an SDK bug.
 
 2. The keyframe animation API sometimes animates a snapshot's alpha value at the wrong time. I worked around this in `SOLFoldTransitionAnimator` by scaling down `bottomLeftSnapshot` in Keyframe 4 of the dismiss animation. I would have preferred to just set it's alpha to 0 in a prior keyframe but that didn't work. I filed a radar for this.
 
 3. Normally an unwind segue will pop/dismiss the view controller. This doesn't happen 
- for custom modal transitions so the view controller needs to be programmatically dismissed in the unwind segue action method. See the comments for `-[SOLViewController unwindToViewController:]` for more details.
+ for custom modal transitions so the view controller needs to be programmatically dismissed in the unwind segue action. See the comments for `-[SOLViewController unwindToViewController:]` for more details.
  
 4. For standard interactive transitions like Flow 1, the navigation controller delegate can't be set otherwise the standard interactive pop gesture (swipe right) breaks. See the comments for `-[SOLViewController prepareForSegue:]` for more details.
