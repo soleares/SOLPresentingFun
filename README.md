@@ -9,6 +9,8 @@ Storyboards are used as much as possible in this sample. This was done as an exe
 
 Requires Xcode 5 and iOS 7.
 
+<img src="https://raw.github.com/soleares/SOLPresentingFun/assets/main.png" alt="Transitions" title="Transitions">
+
 #Transitions
 
 ##Slide
