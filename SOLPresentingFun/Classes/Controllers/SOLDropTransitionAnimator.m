@@ -43,7 +43,7 @@ static CGFloat const kDefaultDuration = 1.0;
     CGFloat xContact = CGRectGetMaxX(containerView.bounds);
     if (p.x < xContact) {
         [self removeChildBehavior:behavior];
-        [self.dynamicAnimator removeBehavior:behavior];
+        [self.animator removeBehavior:behavior];
         self.collisionBehavior = nil;
     }
 }
@@ -68,7 +68,7 @@ static CGFloat const kDefaultDuration = 1.0;
         for (UIDynamicBehavior *behavior in self.childBehaviors) {
             [self removeChildBehavior:behavior];
         }
-        [self.dynamicAnimator removeAllBehaviors];
+        [animator removeAllBehaviors];
         self.transitionContext = nil;
     }
     // Dismissing
@@ -77,9 +77,9 @@ static CGFloat const kDefaultDuration = 1.0;
         if (self.attachBehavior) {
             [self removeChildBehavior:self.attachBehavior];
             self.attachBehavior = nil;
-            [self.animator addBehavior:self];   // can't use dynamicAnimator here, it's nil
+            [animator addBehavior:self];
             CGFloat duration = [self transitionDuration:self.transitionContext];
-            self.finishTime = 1./3. * duration + [self.dynamicAnimator elapsedTime];
+            self.finishTime = 1./3. * duration + [animator elapsedTime];
         }
         // Done with 2nd dismiss stage
         else {
@@ -92,7 +92,7 @@ static CGFloat const kDefaultDuration = 1.0;
             for (UIDynamicBehavior *behavior in self.childBehaviors) {
                 [self removeChildBehavior:behavior];
             }
-            [self.dynamicAnimator removeAllBehaviors];
+            [animator removeAllBehaviors];
             self.transitionContext = nil;
         }
     }
@@ -169,14 +169,17 @@ static CGFloat const kDefaultDuration = 1.0;
         self.collisionBehavior = collisionBehavior;
         
         // Set the dynamic animation finish time
-        self.finishTime = duration + [self.dynamicAnimator elapsedTime];
+        self.finishTime = duration + [self.animator elapsedTime];
         
-        // Make sure the dynamic animation elapsed time doesn't exceed the transition animation duration
-        __weak __typeof(&*self)weakSelf = self;
+        // Make sure the dynamic animator's elapsed time doesn't exceed the transition animation duration
+        __weak SOLDropTransitionAnimator *weakSelf = self;
         self.action = ^{
-            if([weakSelf.dynamicAnimator elapsedTime] >= weakSelf.finishTime) {
-                weakSelf.elapsedTimeExceededDuration = YES;
-                [weakSelf.dynamicAnimator removeBehavior:weakSelf];
+            __strong SOLDropTransitionAnimator *strongSelf = weakSelf;
+            if (strongSelf) {
+                if ([strongSelf.animator elapsedTime] >= strongSelf.finishTime) {
+                    strongSelf.elapsedTimeExceededDuration = YES;
+                    [strongSelf.animator removeBehavior:strongSelf];
+                }
             }
         };
         
@@ -231,14 +234,17 @@ static CGFloat const kDefaultDuration = 1.0;
         [self.animator addBehavior:self];
         
         // Set the dismiss finish time to 2/3 of the duration
-        self.finishTime = (2./3.) * duration + [self.dynamicAnimator elapsedTime];
+        self.finishTime = (2./3.) * duration + [self.animator elapsedTime];
         
-        // Make sure the dynamic animation elapsed time doesn't exceed the transition animation duration
-        __weak __typeof(&*self)weakSelf = self;
+        // Make sure the dynamic animator's elapsed time doesn't exceed the transition animation duration
+        __weak SOLDropTransitionAnimator *weakSelf = self;
         self.action = ^{
-            if([weakSelf.dynamicAnimator elapsedTime] >= weakSelf.finishTime) {
-                weakSelf.elapsedTimeExceededDuration = YES;
-                [weakSelf.animator removeBehavior:weakSelf];
+            __strong SOLDropTransitionAnimator *strongSelf = weakSelf;
+            if (strongSelf) {
+                if ([strongSelf.animator elapsedTime] >= strongSelf.finishTime) {
+                    strongSelf.elapsedTimeExceededDuration = YES;
+                    [strongSelf.animator removeBehavior:strongSelf];
+                }
             }
         };
     }
