@@ -8,7 +8,7 @@
 
 #import "SOLDropTransitionAnimator.h"
 
-static CGFloat const kDefaultDuration = 1.0;
+static NSTimeInterval const kDefaultDuration = 1.0;
 
 @interface SOLDropTransitionAnimator () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 @property (nonatomic, strong) id<UIViewControllerContextTransitioning> transitionContext;
@@ -78,7 +78,7 @@ static CGFloat const kDefaultDuration = 1.0;
             [self removeChildBehavior:self.attachBehavior];
             self.attachBehavior = nil;
             [animator addBehavior:self];
-            CGFloat duration = [self transitionDuration:self.transitionContext];
+            NSTimeInterval duration = [self transitionDuration:self.transitionContext];
             self.finishTime = 1./3. * duration + [animator elapsedTime];
         }
         // Done with 2nd dismiss stage
@@ -117,7 +117,7 @@ static CGFloat const kDefaultDuration = 1.0;
     UIView *fromView = fromVC.view;
     UIView *toView = toVC.view;
     UIView *containerView = [transitionContext containerView];
-    CGFloat duration = [self transitionDuration:transitionContext];
+    NSTimeInterval duration = [self transitionDuration:transitionContext];
     
     // Retain the transition context so that we can mark it complete in dynamicAnimatorDidPause:
     self.transitionContext = transitionContext;

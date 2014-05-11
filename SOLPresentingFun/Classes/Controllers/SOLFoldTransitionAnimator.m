@@ -21,7 +21,7 @@ static CGFloat const kInitialScale = 0.001;
     UIView *fromView = fromVC.view;
     UIView *toView = toVC.view;
     UIView *containerView = [transitionContext containerView];
-    CGFloat duration = [self transitionDuration:transitionContext];
+    NSTimeInterval duration = [self transitionDuration:transitionContext];
     
     // Take a full snapshot of the view we're transitioning to/from
     UIView *fullSnapshot;

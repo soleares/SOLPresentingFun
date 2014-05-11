@@ -19,7 +19,7 @@
     UIView *fromView = fromVC.view;
     UIView *toView = toVC.view;
     UIView *containerView = [transitionContext containerView];
-    CGFloat duration = [self transitionDuration:transitionContext];
+    NSTimeInterval duration = [self transitionDuration:transitionContext];
 
     CGRect initialFrame = [transitionContext initialFrameForViewController:fromVC];
     CGRect offscreenRect = [self rectOffsetFromRect:initialFrame atEdge:self.edge];

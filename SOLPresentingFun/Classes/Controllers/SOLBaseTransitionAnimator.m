@@ -8,7 +8,7 @@
 
 #import "SOLBaseTransitionAnimator.h"
 
-static CGFloat const kDefaultDuration = 1.0;
+static NSTimeInterval const kDefaultDuration = 1.0;
 
 @implementation SOLBaseTransitionAnimator
 
