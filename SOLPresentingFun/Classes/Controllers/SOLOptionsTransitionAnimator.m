@@ -8,6 +8,9 @@
 
 #import "SOLOptionsTransitionAnimator.h"
 
+static CGFloat const kInitialScale = 0.01;
+static CGFloat const kFinalScale = 0.9;
+
 @implementation SOLOptionsTransitionAnimator
 
 #pragma mark - UIViewControllerAnimatedTransitioning
@@ -30,12 +33,12 @@
         toView.layer.masksToBounds = YES;
         
         // Set initial scale to zero
-        toView.transform = CGAffineTransformMakeScale(0.0, 0.0);
+        toView.transform = CGAffineTransformMakeScale(kInitialScale, kInitialScale);
         [containerView addSubview:toView];
         
         // Scale up to 90%
         [UIView animateWithDuration:duration animations: ^{
-            toView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+            toView.transform = CGAffineTransformMakeScale(kFinalScale, kFinalScale);
             fromView.alpha = 0.5;
         } completion: ^(BOOL finished) {
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
@@ -46,7 +49,7 @@
         
         // Scale down to 0
         [UIView animateWithDuration:duration animations: ^{
-            fromView.transform = CGAffineTransformMakeScale(0.0, 0.0);
+            fromView.transform = CGAffineTransformMakeScale(kInitialScale, kInitialScale);
             toView.alpha = 1.0;
         } completion: ^(BOOL finished) {
             [fromView removeFromSuperview];
