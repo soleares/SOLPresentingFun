@@ -7,7 +7,9 @@ Apple didn't provide sample code for this session so it's recreated here for you
 
 Storyboards are used as much as possible in this sample. This was done as an exercise and to verify that the new APIs worked with Storyboard segues.
 
-Requires Xcode 5 and iOS 7.
+Requires:  
+Xcode 5 or later  
+iOS 7 or later
 
 <img src="https://raw.github.com/soleares/SOLPresentingFun/assets/main.png" alt="Transitions" title="Transitions">
 
