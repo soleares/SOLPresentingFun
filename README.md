@@ -13,43 +13,43 @@ iOS 7 or later
 
 <img src="https://raw.github.com/soleares/SOLPresentingFun/assets/main.png" alt="Transitions" title="Transitions">
 
-#Transitions
+# Transitions
 
-##Slide
+## Slide
 
 A custom transition that slides a view controller in from an edge.
 
 The transition is implemented in `SOLSlideTransitionAnimator`.
 
-##Bounce
+## Bounce
 A custom transition that slides a view controller in from an edge with bounce.
 
 The transition is implemented in `SOLBounceTransitionAnimator`. 
 
-##Fold
+## Fold
 A custom transition that uses snapshots and keyframes to achieve a folding origami effect. 
 
 The transition is implemented in `SOLFoldTransitionAnimator`. 
 
-##Flow 1
+## Flow 1
 
 A standard interactive transition that animates between collection view controllers and includes a standard interactive pop gesture (swipe right).
 
 It uses a new property `useLayoutToLayoutNavigationTransitions` on `UICollectionViewController`.
 
-##Drop
+## Drop
 A custom modal transition that shows how to combine custom transitions with UIKit Dynamics.
 
 The transition is implemented in `SOLDropTransitionAnimator`. 
 
 
-##Options
+## Options
 A custom modal transition that presents an in-app settings view controller.
 
 The transition is implemented in `SOLOptionsTransitionAnimator`.
 
 
-#Issues
+# Issues
 
 I came across the following issues with the new API:
 
